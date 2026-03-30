@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    {% if message %}
+    <div class="message-box">
+        {{ message }}
+    </div>
+    {% endif %}
+
+    <h2>🥕 Detected Ingredients</h2>
+    {% if ingredients %}
+        {% for item in ingredients %}
+            <div class="card">{{ item }}</div>
+        {% endfor %}
+    {% else %}
+        <p>No valid ingredients found.</p>
+    {% endif %}
+
+    <h2>🍳 Recommended Recipes</h2>
+    {% if recipes %}
+        {% for recipe in recipes %}
+            <div class="card recipe">{{ recipe }}</div>
+        {% endfor %}
+    {% else %}
+        <p>No matching recipes found.</p>
+    {% endif %}
+
+    <br>
+    <a href="/"><button>Go Back</button></a>
+
+</div>
+
+</body>
+</html>

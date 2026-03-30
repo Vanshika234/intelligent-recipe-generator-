@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Intelligent Recipe Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Intelligent Recipe Generator</h1>
+
+    <form action="/analyze" method="post" enctype="multipart/form-data">
+        <h3>Upload Ingredient Image (Optional)</h3>
+        <input type="file" name="image">
+
+        <h3>OR Enter Ingredients Manually (comma separated)</h3>
+        <input type="text" name="ingredients" placeholder="egg, tomato, bread">
+
+        <br><br>
+        <input type="submit" value="Find Recipes">
+    </form>
+</div>
+
+</body>
+</html>
